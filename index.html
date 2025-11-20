@@ -1,0 +1,1969 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TEDxJNTU Hyderabad</title>
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <!-- Include AOS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Include fullPage.js CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullpage.js@3.1.2/dist/fullpage.min.css" />
+
+  <!-- Include fullPage.js JS -->
+  <script src="https://cdn.jsdelivr.net/npm/fullpage.js@3.1.2/dist/fullpage.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100%;
+      height: auto;
+      font-family: 'Raleway', sans-serif;
+      scroll-behavior: smooth;
+      background: #000000; /* Solid black background throughout */
+      max-width: 100vw;
+      overflow-x: hidden;
+    }
+    .section, .homepage-sections, .theme-section {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+@media (max-width: 768px) {
+  .hero-text h2 {
+    font-size: 48px;
+  }
+
+  .overlay-text {
+    font-size: 48px;
+  }
+
+  .section h2 {
+    font-size: 28px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: flex-start !important;
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .footer-delta {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .delta-text {
+    font-size: 36px;
+    margin-left: 0;
+    margin-right: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .delta-icon {
+    height: 120px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .footer-info {
+    flex-direction: column;
+    gap: 30px;
+    align-items: left;
+  }
+
+  .footer-links {
+    width: 100%;
+    text-align: left;
+    padding-left: 0rem;
+    margin-left: -15px;
+  }
+  .footer-contact,
+  .footer-social {
+    text-align: left;
+    width: 100%;
+  }
+
+  .links-grid {
+    display: grid ; /* ðŸ‘ˆ force override */
+    grid-template-columns: 1fr ; /* ðŸ‘ˆ enforce single column */
+    gap: 0.5rem;
+    margin-left: -2px;
+    justify-items: start;
+  }
+
+  .footer-links a {
+    text-align: left;
+    padding-left: 0;
+  }
+
+  .footer-credit {
+    margin-left: 0;
+    text-align: center;
+    padding-top: 20px;
+  }
+}
+
+.overlay-text {
+  font-size: clamp(32px, 8vw, 100px);
+}
+
+#particles-js {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh; /* âœ… restrict it to hero only */
+  z-index: 0;
+  margin-top: 100px;
+  min-height: 59px;
+  
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(0, 0, 0, 0.6) 40%,
+    rgba(0, 0, 0, 0.3) 75%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+
+    .nav-container {
+      margin: 0 auto;
+      padding: 20px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      height: 500px;
+      flex-shrink: 0;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 15;
+      font-size: 15px;
+      white-space: nowrap;
+      transition: all 0.3s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus,
+    .nav-links a:active {
+      color: #eb0028;
+      font-size: 15px;
+      transform: scale(1.0);
+    }
+
+    .hero-header {
+      position: relative;
+      height: 100vh;
+      width: 100%;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-text {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      margin-top: 120px;
+    }
+
+    .hero-text h2 {
+      font-size: 200px;
+      color: white;
+    }
+
+    .hero-text h3 {
+      font-size: 20px;
+      color: #e0e0e0;
+      text-transform: uppercase;
+      margin-top: 10px;
+    }
+
+    .homepage-sections {
+      background: transparent;
+      padding: 20px 20px;
+      color: #fff;
+    }
+
+    .section {
+      max-width: 900px;
+      margin: 0 auto 10px;
+      text-align: center;
+    }
+
+    .section h2 {
+      font-size: 36px;
+      color: #ffff;
+      margin-bottom: 20px;
+    }
+
+    .section p,
+    .section ul {
+      font-size: 18px;
+      line-height: 1.8;
+      color: #ddd;
+    }
+
+    .section ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .section ul li::before {
+      content: "âœ”ï¸ ";
+      color: #ffff;
+    }
+
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      max-width: 100%;
+      margin: 0 auto;
+      margin-bottom: 0px;
+      left: -25%;
+      margin-top: 50px;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 80%;
+      height: 80%;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+
+    @media (max-width: 768px) {
+      .nav-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .hero-text h2 {
+        font-size: 36px;
+      }
+
+      .hero-text h3 {
+        font-size: 16px;
+      }
+
+      .section h2 {
+        font-size: 28px;
+      }
+
+      .section p,
+      .section ul {
+        font-size: 16px;
+      }
+
+      .logo {
+        height: 32px;
+      }
+    }
+    nav {
+  opacity: 0;
+  animation: fadeInNav 0.68s ease-out forwards;
+}
+
+@keyframes fadeInNav {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+  }
+
+  .logo {
+    height: 32px;
+    flex-shrink: 0;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    text-align: center;
+    padding: 8px 20px;
+    animation: slideDown 0.4s ease forwards;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: block;
+    width: 32px;
+    height: auto;
+    cursor: pointer;
+  }
+}
+nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background-color: transparent;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 25px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.logo {
+  height: 62px;
+}
+
+.menu-icon {
+  display: none;
+  width: 35px;
+  height: auto;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.95);
+    text-align: center;
+    padding: 20px 0;
+    animation: slideDown 0.3s ease forwards;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+.dropdown-menu {
+  transition: max-height 0.4s ease;
+  overflow: hidden;
+  max-height: 0;
+}
+.dropdown-menu.open {
+  max-height: 500px; /* or whatever height fits */
+}
+
+.fixed-image {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(0deg);
+  z-index: 1;
+  pointer-events: none;
+}
+
+#fixed-image {
+  width: 325px;
+  height: auto;
+  transform-origin: center center;
+}
+
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgb(255, 255, 255);
+  font-family: 'Raleway',sans-serif;
+  font-size: 100px;
+  font-weight: bolder;
+  z-index: 3;
+  pointer-events: none;
+  text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.7);
+  white-space: nowrap;
+}
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  #fixed-image {
+    width: 250px; /* Increase logo size */
+  }
+
+  .overlay-text {
+    font-size: 67px; /* Bigger â€œï¼¤ï¼¥ï¼¬ï¼´ï¼¡â€ text */
+    top: 52%;
+    transform: translate(-50%, -50%);
+  }
+
+  .subtext1 {
+    top: calc(55% + 70px); /* Move text closer to Delta */
+    font-size: 1rem;
+  }
+
+  .subtext2 {
+    top: calc(55% + 95px); /* Move text closer */
+    font-size: 1rem;
+  }
+
+  .ticket-button {
+    top: calc(55% + 140px); /* Adjust ticket button position */
+    font-size: 0.9rem;
+    padding: 10px 20px;
+  }
+}
+
+
+
+.subtext1{
+  position: absolute;
+  top: calc(55% + 105px); /* Adjust based on image size */
+  left: 50%;
+  transform: translateX(-50%);
+  color: #ffffff;
+  font-family: 'Raleway', sans-serif;
+  font-size: 25px;
+  font-weight: 400;
+  white-space: nowrap;
+  z-index: 3;
+  pointer-events: none;
+  margin-top: 0; /* no gap */
+}
+
+@media (max-width: 768px) {
+  .hero-header {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 60px; /* ensures it doesnâ€™t hit nav */
+    height: 100vh;     /* full screen height */
+    position: relative;
+  }
+
+  .fixed-image {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .ticket-button {
+    position: relative;
+    top: 0;
+    transform: none;
+    margin-top: 20px;
+    padding: 10px 22px;
+    font-size: 0.95rem;
+  }
+}
+
+
+.subtext2{
+  position: absolute;
+  top: calc(55% + 125px); /* Adjust based on image size */
+  left: 50%;
+  transform: translateX(-50%);
+  color: #ffffff;
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  white-space: nowrap;
+  z-index: 3;
+  pointer-events: none;
+  margin-top: 0; /* no gap */
+}
+.ticket-button {
+  position: absolute;
+  top: calc(55% + 170px);
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #000;
+  color: white;
+  font-family: 'Raleway', sans-serif;
+  white-space: nowrap;     /* ðŸ’¡ Prevents line break */
+  line-height: 1;          /* Keeps it tight */
+  font-size: 16px;
+  padding: 12px 28px;
+  text-align: center;
+  display: inline-block;
+  border: 2px solid white;  /* âœ… This adds the border */
+  border-radius: 10px;
+  text-decoration: none;
+  z-index: 3;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  pointer-events: auto;
+}
+
+
+.ticket-button:hover {
+  background-color: #eb0028;
+}
+
+.theme-section {
+  background-color: #000;
+  color: white;
+  padding: 40px 40px;
+  font-family: 'Raleway', sans-serif;
+  max-width: 1200px;
+  margin: 0px auto 0px;
+}
+
+.theme-flex-container {
+  display: flex;
+  align-items: left;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top:175px;
+  margin-bottom: 50px;
+}
+@media (max-width: 768px) {
+  .theme-section {
+    text-align: left;
+    padding-left: 1.5rem;
+    padding-right: 1rem;
+    margin-left: 5px;
+  }
+
+  .theme-title {
+    text-align: left;
+  }
+
+  .theme-description {
+    text-align: left;
+    margin-left: 0;
+  }
+
+  .delta-logo-wrapper {
+    margin-left: -75px;
+  }
+}
+
+
+.theme-left {
+  flex: 1;
+  min-width: 300px;
+  position: relative;
+  top: 25px; /* move down */
+  margin-right: 130px;
+}
+
+.theme-right {
+  flex: 1;
+  min-width: 300px;
+  margin-left: -182px;
+}
+
+.theme-year {
+  color: #eb0028;
+  font-size: 2rem;
+  margin-bottom: 10px;
+  margin-top: -100px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+  text-align: left;
+  position: relative;
+  left: -10px; /* Default: no shift */
+}
+
+
+.delta-logo-text {
+  display: flex;
+  align-items: center;
+}
+
+.delta-logo {
+  height: 250px;
+  margin-right: -323px; /* overlaps D */
+  margin-left: 100px;
+  z-index: 1;
+}
+
+.theme-title {
+  font-size: 5rem;
+  font-weight: bold;
+  position: relative;
+  z-index: 2;
+  margin-left: -38px;
+}
+
+.delta-d {
+  position: relative;
+  left: -10px;
+  z-index: 3;
+}
+
+.theme-description {
+  list-style: none;
+  padding-left: 0;
+  font-size: 4rem;
+  line-height: 4.2;
+  font-family: 'Raleway', sans-serif;
+}
+
+.theme-description li {
+  margin-bottom: 12px;
+}
+
+@media (max-width: 768px) {
+  .footer-links {
+    text-align: left;
+    align-self: flex-start;
+    width: 100%;
+    padding-left: 1rem;
+  }
+
+  .links-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+
+  .footer-links a {
+    text-align: left;
+    width: 100%;
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  .theme-flex-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+    align-items: center; /* âœ… center the column contents */
+  }
+
+  .theme-left,
+  .theme-right {
+    width: 100%;
+    text-align: center;
+  }
+
+  .theme-year {
+    left: 0;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .delta-logo-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .delta-logo {
+    height: 120px;
+    margin: 0 auto;
+  }
+
+  .theme-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.4rem;
+    font-weight: bold;
+    color: white;
+    z-index: 2;
+    pointer-events: none;
+    white-space: nowrap;
+    text-align: center;
+  }
+  
+  .delta-d {
+    margin-right: 5px;
+  }
+
+  .theme-description {
+  text-align: left;
+  padding-left: 0;
+  margin-left: -1rem; /* â¬…ï¸ nudge even further left */
+  list-style-position: inside;
+}
+
+
+}
+
+@media (max-width: 768px) {
+  .delta-logo-text {
+    position: relative;
+    display: inline-block;
+  }
+
+  .delta-logo {
+    display: block;
+    height: 120px;
+    margin: 0 auto;
+  }
+
+  .theme-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: white;
+    z-index: 2;
+    pointer-events: none;
+    white-space: nowrap;
+  }
+}
+
+
+#event-info {
+  display: flex;
+  margin-top: 180px;
+  margin-bottom: 100px;
+  flex-direction: column;
+  align-items: flex-end; /* Pushes the block to the right */
+}
+
+#event-info h2 {
+  text-align: center;
+  width: 100%; /* Keeps the heading centered across full section */
+}
+
+#event-info p {
+  text-align: left;    /* Center-aligns the text inside the block */
+  max-width: 800px;      /* Optional: keeps it from stretching too wide */
+}
+
+/* Thin scrollbar styling - Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ffff;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #ffff;
+}
+
+/* Chrome, Safari, Edge */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #ffff;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #ffff;
+}
+
+.section-heading {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 20px;
+  text-align: center;
+  margin-top: 100px;
+}
+
+.delta {
+  font-weight: bold;
+  color: #eb0028;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif !important;
+  font-size: 3.2rem;
+  text-align: center;
+}
+
+.about-section {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: #000;
+  color: white;
+}
+
+.why-join-heading {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.highlight {
+  color: #e50914;
+}
+
+.flashcard-container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  gap: 1rem;                /* ðŸ”» smaller gap */
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.flashcard {
+  background-color: #111;
+  color: #fff;
+  padding: 2rem 1.2rem;
+  width: 260px;
+  min-height: 280px;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+
+.flashcard:nth-child(1) { animation-delay: 0.2s; }
+.flashcard:nth-child(2) { animation-delay: 0.4s; }
+.flashcard:nth-child(3) { animation-delay: 0.6s; }
+.flashcard:nth-child(4) { animation-delay: 0.8s; }
+
+.flashcard:hover {
+  background-color: #1c1c1c;
+  transform: translateY(-5px);
+}
+
+.flashcard h3 {
+  margin-bottom: 0.5rem;
+  color: #e50914;
+}
+
+.flashcard p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin-top: 100px;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1100px) {
+  .flashcard-container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .flashcard {
+    width: calc(50% - 2rem);  /* Two cards per row */
+  }
+}
+
+@media (max-width: 600px) {
+  .flashcard {
+    width: 100%;               /* One card per row */
+  }
+}
+
+.flashcard {
+  opacity: 1;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.flashcard:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.flashcard:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.flashcard:nth-child(3) {
+  animation-delay: 0.6s;
+}
+.flashcard:nth-child(4) {
+  animation-delay: 0.8s;
+}
+
+.nav-links a:visited,
+.nav-links a:focus,
+.nav-links a:active {
+  color: white;
+  font-weight: 500;
+  outline: none;
+}
+.nav-links a:hover {
+  color: #eb0028;
+}
+
+.section,
+.theme-section,
+.homepage-sections {
+  position: relative;
+  z-index: 1;
+  background-color: transparent;
+}
+
+
+.footer-links {
+  min-width: 150px;
+  margin-left: px;
+}
+
+.footer-links h3 {
+  color: #eb0028;
+  margin-bottom: 10px;
+  margin-top: 50px;
+}
+.site-footer {
+  background-color: #0b0b0b;
+  color: #fff;
+  padding: 10px 10px 10px;
+  font-family: 'Raleway', sans-serif;
+  border-top: 1px solid #ccc;
+}
+
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  max-width: 100%;
+  margin: 0 0 0px;
+  gap: 0px;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+}
+
+.footer-logo {
+  height: 50px;
+}
+
+.footer-delta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+.delta-text {
+  font-size: 90px;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+
+.footer-contact,
+.footer-social {
+  min-width: 100px;
+}
+
+.footer-contact h3,
+.footer-social h3 {
+  color: #eb0028;
+  margin-bottom: 10px;
+  margin-top: 50px;
+}
+
+.footer-contact a,
+.footer-social a {
+  color: #fff;
+  text-decoration: none;
+  font-family: sans-serif;
+  display: block;
+  margin-bottom: 8px;
+  transition: color 0.3s ease;
+}
+
+.footer-contact a:hover,
+.footer-social a:hover {
+  color: #eb0028;
+}
+
+.footer-credit {
+  text-align: center;
+  font-size: 14px;
+  color: #aaa;
+  font-family: sans-serif;
+  min-width: 100%;
+  margin-top: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+    padding: 20px;
+  }
+
+  .footer-left {
+    align-items: center;
+  }
+
+  .footer-logo {
+    height: 40px;
+    align-items: center;
+  }
+
+  .footer-delta {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .delta-text {
+    font-size: 48px;
+    margin-left: 0;
+    margin-right: 0;
+    transform: translate(-50%, -50%);
+    left: 50%;
+  }
+
+  .delta-icon {
+    height: 100px;
+    margin-left: 0px;
+    margin-top: 10px;
+  }
+
+  .footer-info {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .footer-contact,
+  .footer-social,
+  .footer-links {
+    min-width: unset;
+    width: 100%;
+  }
+
+  .links-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .footer-credit {
+    margin-left: 0;
+    padding-top: 20px;
+    text-align: center;
+  }
+}
+
+
+.footer-delta {
+  position: relative;
+}
+
+.delta-logo-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.delta-icon {
+  height: 170px; /* Adjust size as needed */
+  margin-left: 85px;
+  margin-top: 5px;
+}
+
+.delta-text {
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  margin-left: 85px;
+  margin-right: -200px;
+  transform: translate(-22.5%, -50%);
+  font-size: 60px;
+  font-weight: bold;
+  color: white;
+  letter-spacing: 6px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.footer-socials {
+  background-color: #000; /* black background */
+  padding: 1.5rem;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.footer-socials h3 {
+  color: #e60023; /* red color */
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.footer-socials ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-social li {
+  margin-bottom: 1rem;
+}
+
+.footer-social a {
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: opacity 0.3s;
+  font-family: 'Raleway', sans-serif;
+}
+.footer-social{
+  margin-right: 50px;
+}
+
+
+.footer-social a:hover {
+  opacity: 1;
+}
+
+
+.footer-social img {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 8px;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #eb0028;
+}
+
+.links-grid {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 8px 20px;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #eb0028;
+}
+
+.section h2, .section p {
+  color: white;
+}
+.section,
+.theme-section,
+.homepage-sections {
+  background-color: #000;
+  position: relative;
+  z-index: 1;
+}
+
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 999;
+  background-color: #000;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 24px;
+  cursor: pointer;
+  display: none;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+#backToTop:hover {
+  background-color: #eb0028;
+  color: #000;
+  box-shadow: 0 0 10px #ff000080
+}
+.year-sans {
+  font-family: sans-serif !important;
+  font-weight: 5 !important;
+}
+
+@media (max-width: 768px) {
+  nav.nav-solid {
+    background-color: #000 !important; /* Solid black override */
+  }
+
+  .nav-links {
+    background-color: transparent;
+  }
+
+  .nav-links.show {
+  display: flex;
+  background-color: #000;
+  margin-top: 0;
+  padding: 15px 0;
+  width: 100%;
+  animation: slideUpFade 0.4s ease forwards;
+  border-radius: 0;
+}
+
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+.nav-links {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 70px;
+  right: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.95);
+  text-align: center;
+  padding: 20px 0;
+  animation: none;
+}
+
+.nav-links.showing {
+  display: flex;
+  animation: slideDown 0.3s ease forwards;
+}
+
+.nav-links.hiding {
+  display: flex;
+  animation: slideUp 0.3s ease forwards;
+}
+
+
+  .nav-links.show a {
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  .nav-links.show a:hover {
+    background-color: #444;
+  }
+}
+
+.close-btn-img {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1002;
+}
+
+.menu-icon-img {
+  width: 32px;
+  height: auto;
+  cursor: pointer;
+  z-index: 1002;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 1;
+}
+.menu-icon-img.fade-out {
+  opacity: 0;
+}
+.menu-toggle-icons {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  z-index: 1002;
+}
+
+.menu-icon-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.menu-icon-img.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.menu-icon-img.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+@media (max-width: 768px) {
+  .theme-left {
+    margin-right: 0 !important;
+  }
+
+  .theme-right {
+    margin-left: 0 !important;
+  }
+}
+/* Hide X and menu icons by default */
+.menu-toggle-icons {
+  display: none;
+}
+
+/* Show X and menu icon ONLY on mobile */
+@media (max-width: 768px) {
+  .menu-toggle-icons {
+    display: block;
+  }
+}
+.footer-logo {
+  height: auto;
+  width: auto;
+  max-height: 99px;
+  object-fit: contain;
+  margin-left: 19px;
+  margin-top: 10px;
+}
+.nav-links a.desktop-only {
+  background-color: #eb0028;
+  color: rgb(255, 255, 255);
+  font-family: 'Raleway', sans-serif;
+  white-space: nowrap;
+  line-height: 1;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 10px 20px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  pointer-events: auto;
+  box-sizing: border-box;
+}
+
+/* Hover effect */
+.nav-links a.desktop-only:hover {
+  background-color: #b01212;
+}
+
+/* Hide on mobile */
+@media (max-width: 768px) {
+  .nav-links a.desktop-only {
+    display: none !important;
+  }
+}
+#timer {
+  display: flex;
+  justify-content: center;
+  gap: 50px;           /* Space between boxes */
+  width: 900px;
+  height: 200px;         /* Full available width */
+  max-width: 100%;    /* Optional: limit max width for better layout */
+  margin: 0 auto;      /* Center horizontally */
+  margin-top: 20px;
+}
+
+#timer > div {
+  background: #232323;
+  color: #fff;
+  border-radius: 8px;
+  padding: 20px 0;             /* Vertical padding only */
+  flex: 1 1 0;                 /* Grow and shrink evenly */
+  aspect-ratio: 1 / 1;         /* Make each div a perfect square */
+  box-shadow: 0 2px 8px #0002;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;     /* Center content vertically */
+  align-items: center;         /* Center content horizontally */
+  min-width: 0;                /* Prevent overflow */
+}
+
+#timer span {
+  font-weight: bold;
+  font-size: 5rem;     /* Large number size */
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: #ffffff;      /* TEDx Red */
+  display: block;
+  margin-bottom: 0.25em;
+}
+
+#timer > div {
+  font-size: 1rem;     /* Label size */
+  font-weight: bold;
+  font-family: 'Raleway', sans-serif;
+}
+#countdown-timer h2 {
+  color: #ffffff;          /* Keep the TEDx Red */
+  margin-bottom: 0px;     /* Increased gap below heading */
+  font-size: 3rem;         /* Adjust heading size (bigger/smaller as needed) */
+  font-family: 'Raleway', sans-serif;
+  letter-spacing: 1px;
+  font-weight: bold;       /* Optional: emphasize heading */
+}
+.fade-in-on-scroll {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  will-change: opacity, transform;
+}
+
+.fade-in-on-scroll.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Dropdown container */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown button */
+.dropbtn {
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+  padding: 10px 0px;
+  display: block;
+  font-family: 'Raleway', sans-serif;
+}
+
+/* Dropdown content */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #111;
+  min-width: 100px;
+  z-index: 9999;
+  top: 100%;
+  left: -15.5px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.6);
+}
+
+/* Links inside dropdown */
+.dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  display: block;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.dropdown-content a:hover {
+  background-color: #eb0028;
+  color: white;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: white;
+  transition: color 0.4s ease-in-out;
+  position: relative;
+}
+
+.social-link:hover {
+  color: #eb0028;
+  transition: color 0.3s ease-in-out 0.035s; /* delay matches image fade start */
+}
+
+/* Icon container */
+.icon-wrapper {
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+
+/* Common icon styling */
+.icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  transition: opacity 0.4s ease-in-out;
+}
+
+/* Show white icon first */
+.white-icon {
+  opacity: 1;
+  z-index: 1;
+}
+
+/* Red icon hidden initially */
+.red-icon {
+  opacity: 0;
+  z-index: 2;
+}
+
+/* On hover: fade white out, red in */
+.social-link:hover .white-icon {
+  opacity: 0;
+}
+
+.social-link:hover .red-icon {
+  opacity: 1;
+}
+
+  </style>
+    <link rel="stylesheet" href="assets/css/responsive.css">\n</head>
+<body>
+  <header class="hero-header">
+    <div id="particles-js"></div>
+    <div class="fixed-image">
+      <img id="fixed-image" src="assets/img/your-image.png" alt="Repulse Center Image" />
+      <div class="overlay-text">ï¼¤ ï¼¥ ï¼¬ ï¼´ ï¼¡</div>
+      <div class="subtext1">CHANGE IS THE ONLY CONSTANT</div>
+      <a href="https://forms.gle/YOUR_FORM_LINK" target="_blank" class="ticket-button">Book Your Tickets</a>
+    </div>
+    <nav>\n    <button class="mobile-menu" aria-label="Open menu">â˜°</button>
+      <div class="nav-container">
+        <a href="index.html" class="logo-wrapper">
+          <img src="assets/img/tedx-logo.png" alt="TEDxJNTU Hyderabad Logo" class="logo" />
+        </a>
+        <div class="menu-toggle-icons" onclick="toggleMenu()">
+          <img src="assets/img/menu.png" id="menuIcon" class="menu-icon-img show" alt="Menu">
+          <img src="assets/img/x.png" id="closeIcon" class="menu-icon-img hide" alt="Close">
+        </div>        
+        <div class="nav-links" id="navLinks">
+          <a href="index.html">HOME</a>
+          <div class="dropdown">
+            <a href="#" class="dropbtn">ABOUT</a>
+            <div class="dropdown-content">
+              <a href="about.html">About Us</a>
+              <a href="team.html">Our Team</a>
+              <a href="admin.html">Our Administration</a>
+              <a href="https://www.ted.com/tedx/events/65306" target="_blank">Official TEDx Website</a>
+              <a href="https://jntuh.ac.in/" target="_blank">JNTU Hyderabad</a>
+              <a href="https://jntuhceh.ac.in/" target="_blank">JNTUH UCESTH</a>
+            </div>
+          </div>
+          <a href="speakers.html">SPEAKERS</a>
+          <a href="sponsors.html">SPONSORS</a>
+          <a href="#contact">CONTACT US</a>
+          <a href="https://forms.gle/YOUR_FORM_LINK" target="_blank" class="desktop-only">Book Your Tickets</a>
+        </div>
+      </div>
+    </nav>
+    <div class="hero-text">
+    </div>
+  </header>
+
+  <main class="fade-in-on-scroll" id="countdown-timer" style="text-align:center; margin:40px 0">
+  <h2>STAY TUNED</h2>
+  <div id="timer" style="display: flex; justify-content: center; gap: 16px; font-size:2rem;">
+    <div><span id="days">0</span><br>Days</div>
+    <div><span id="hours">0</span><br>Hours</div>
+    <div><span id="minutes">0</span><br>Minutes</div>
+    <div><span id="seconds">0</span><br>Seconds</div>
+  </div>
+  <!-- Promo Video -->
+<section class="section" id="promo-video" data-aos="fade-up">
+  <h2 class="section-heading">About the Theme: <span class="delta">DELTA 2025</span></h2>
+  <div class="video-container">
+    <iframe 
+      width="560" 
+      height="315"
+      src="https://www.youtube.com/embed/E1cdQqz2JRU"
+      title="TEDxJNTU Hyderabad Promo"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
+</section>
+
+
+  <script>
+    AOS.init({
+    duration: 600,
+    easing: 'ease-out',
+    once: true, // animation runs once on scroll into view
+  });
+  const isMobile = window.innerWidth <= 768;
+
+const configFile = isMobile
+  ? "particles-mobile.json"
+  : "particles-desktop.json";
+
+particlesJS.load("particles-js", configFile, function () {
+  console.log("Particles loaded from:", configFile);
+});
+  </script>
+
+<script>
+  function toggleMenu() {
+    const nav = document.querySelector("nav");
+    const navLinks = document.getElementById("navLinks");
+
+    const menuIcon = document.getElementById("menuIcon");
+    const closeIcon = document.getElementById("closeIcon");
+
+    if (window.innerWidth <= 768) {
+      if (navLinks.classList.contains("showing")) {
+        navLinks.classList.remove("showing");
+        navLinks.classList.add("hiding");
+
+        // Swap icons
+        menuIcon.classList.add("show");
+        menuIcon.classList.remove("hide");
+        closeIcon.classList.add("hide");
+        closeIcon.classList.remove("show");
+
+        setTimeout(() => {
+          navLinks.classList.remove("hiding");
+          navLinks.style.display = "none";
+        }, 300);
+
+        nav.classList.remove("nav-solid");
+      } else {
+        navLinks.style.display = "flex";
+        navLinks.classList.remove("hiding");
+        navLinks.classList.add("showing");
+
+        // Swap icons
+        menuIcon.classList.add("hide");
+        menuIcon.classList.remove("show");
+        closeIcon.classList.add("show");
+        closeIcon.classList.remove("hide");
+
+        nav.classList.add("nav-solid");
+      }
+    }
+  }
+</script>
+  
+  <script>
+    // Close mobile menu when any nav link is clicked (including #contact)
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        const navLinks = document.getElementById('navLinks');
+        if (navLinks.classList.contains('show')) {
+          navLinks.classList.remove('show');
+        }
+      });
+    });
+  </script>
+  
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+  <script>
+    const backToTopBtn = document.createElement("button");
+    backToTopBtn.id = "backToTop";
+    backToTopBtn.title = "Go to top";
+    backToTopBtn.innerText = "â†‘";
+    document.body.appendChild(backToTopBtn);
+  
+    window.onscroll = function () {
+      if (document.documentElement.scrollTop > 300) {
+  backToTopBtn.style.display = "block";
+  backToTopBtn.style.opacity = "1";
+} else {
+  backToTopBtn.style.opacity = "0";
+}
+    };
+  
+    backToTopBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  </script>
+  <script>
+  // Set target date to 20 December 2025, 00:00:00
+  const countDownDate = new Date("Dec 20, 2025 00:00:00").getTime();
+
+  timer  = setInterval(() => {
+    const now = new Date().getTime();
+    const distance = countDownDate - now;
+
+    if (distance <= 0) {
+      clearInterval(timer);
+      document.getElementById("timer").innerHTML = "<h3>Event Started!</h3>";
+      return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("days").textContent = days;
+    document.getElementById("hours").textContent = hours;
+    document.getElementById("minutes").textContent = minutes;
+    document.getElementById("seconds").textContent = seconds;
+  }, 1000);
+</script>
+
+  
+  <script>
+  // Set event date: October 16, 2025 at 00:00:00
+  const eventDate = new Date("2025-10-16T00:00:00+05:30").getTime();
+
+  const timer = () => {
+    const now = new Date().getTime();
+    const distance = eventDate - now;
+
+    // Convert milliseconds to time components
+    const days = Math.max(0, Math.floor(distance / (1000 * 60 * 60 * 24)));
+    const hours = Math.max(0, Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
+    const minutes = Math.max(0, Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)));
+    const seconds = Math.max(0, Math.floor((distance % (1000 * 60)) / 1000));
+
+    // Update HTML
+    document.getElementById("days").textContent = days;
+    document.getElementById("hours").textContent = hours;
+    document.getElementById("minutes").textContent = minutes;
+    document.getElementById("seconds").textContent = seconds;
+
+    // Stop timer when event is reached
+    if (distance < 0) {
+      clearInterval(timerInterval);
+      document.getElementById("timer").innerHTML = "<span style='color:#FF2B06'>The event has started!</span>";
+    }
+  };
+
+  // Run timer immediately and repeat every second
+  timer();
+  const timerInterval = setInterval(timer, 1000);
+</script>
+<script>
+  // Fade-in on scroll code
+  function handleFadeInOnScroll() {
+    var elem = document.querySelector('.fade-in-on-scroll');
+    if (!elem) return;
+    var rect = elem.getBoundingClientRect();
+    var windowHeight = window.innerHeight || document.documentElement.clientHeight;
+    if (rect.top < windowHeight - 50) {
+      elem.classList.add('visible');
+      window.removeEventListener('scroll', handleFadeInOnScroll);
+    }
+  }
+
+  window.addEventListener('scroll', handleFadeInOnScroll);
+  window.addEventListener('DOMContentLoaded', handleFadeInOnScroll); // Run on page load in case it's already in view
+</script>
+
+ <footer class="site-footer" id="contact">
+    <div class="footer-container">
+      <!-- LEFT SIDE: Logos -->
+      <div class="footer-left">
+        <img src="assets/img/tedx-logo.png" alt="TEDx Logo" class="footer-logo" />
+        <div class="footer-delta">
+          <div class="delta-logo-wrapper">
+            <img src="assets/img/your-image.png" alt="Delta Logo" class="delta-icon" />
+            <span class="delta-text">ï¼¤ï¼¥ï¼¬ï¼´ï¼¡</span>
+          </div>
+        </div>        
+      </div>
+  
+      <!-- Resources Section -->
+      <div class="footer-links">
+        <h3>Resources & Links</h3>
+        <div class="links-grid">
+          <a href="https://www.ted.com/" target="_blank">TED</a>
+          <a href="https://www.ted.com/about/programs-initiatives/tedx-program" target="_blank">TEDx</a>
+          <a href="https://ed.ted.com/">TED Ed</a>
+          <a href="https://www.ted.com/about/programs-initiatives/ted-institute" target="_blank">TED Institute</a>
+          <a href="https://courses.ted.com/" target="_blank">TED Courses</a>
+          <a href="https://www.ted.com/speakers" target="_blank">TED Speakers</a>
+          <a href="https://www.ted.com/participate/organize-a-local-tedx-event/tedx-organizer-guide" target="_blank">TEDx Organisers</a>
+          <a href="https://community.ted.com/landing?from=https%3A%2F%2Fcommunity.ted.com%2F" target="_blank">TED Community</a>
+        </div>
+      </div>
+  
+      
+        <!-- Contact Info -->
+        <div class="footer-contact">
+          <h3>Contact Us</h3>
+          <p>Email: <a href="mailto:tedxjntuhyderabad@gmail.com" target="">tedxjntuhyderabad@gmail.com </a></p>
+          <p>Phone: <a href="tel:+918985285610">+91 89852 85610</a></p>
+        </div>
+  
+        <!-- Social Media -->
+        <div class="footer-social">
+          <h3>Follow Us</h3>
+          <a href="https://www.instagram.com/tedxjntuhyderabad/" class="social-link" target="_blank">
+            <div class="icon-wrapper">
+              <img src="assets/img/instagram-white.png" class="icon white-icon" alt="Instagram White">
+              <img src="assets/img/instagram-red.png" class="icon red-icon" alt="Instagram Red">
+            </div>
+            <span>Instagram</span>
+          </a>
+          <a href="https://www.linkedin.com/company/tedxjntu-hyderabad/" class="social-link" target="_blank">
+            <div class="icon-wrapper">
+              <img src="assets/img/linkedin-white.png" class="icon white-icon" alt="Linkedin White">
+              <img src="assets/img/linkedin-red.png" class="icon red-icon" alt="Linkedin Red">
+            </div>
+            <span>LinkedIn</span>
+          </a>
+          <a href="https://www.youtube.com/@TEDxJNTUHyderabad" class="social-link" target="_blank">
+            <div class="icon-wrapper">
+              <img src="assets/img/youtube-white.png" class="icon white-icon" alt="Youtube White">
+              <img src="assets/img/youtube-red.png" class="icon red-icon" alt="Youtube Red">
+            </div>
+            <span>Youtube</span>
+          </a>
+          <a href="https://x.com/tedxjntuhyd" class="social-link" target="_blank">
+            <div class="icon-wrapper">
+              <img src="assets/img/twitter-white.png" class="icon white-icon" alt="Twitter White">
+              <img src="assets/img/twitter-red.png" class="icon red-icon" alt="Twitter Red">
+            </div>
+            <span>Twitter</span>
+          </a>
+        </div>
+      </div>
+      <p class="footer-credit">
+        Â© Copyright 2025 TEDxJNTU Hyderabad. This is an independent event under license from TED.
+        Learn more <a href="https://www.ted.com/participate/organize-a-local-tedx-event/before-you-start/what-is-a-tedx-event" target="_blank" style="color: #eb0028; text-decoration: underline;">here</a>.
+      </p>
+  </footer>  
+    <script src="assets/js/responsive.js"></script>\n</body>
+</html>

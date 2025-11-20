@@ -1,0 +1,133 @@
+/* Responsive overrides - modern refresh */
+html, body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #f5f5f5;
+  background-color: #000;
+}
+
+/* Make images and videos fluid */
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Navigation improvements */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  background: linear-gradient(180deg, rgba(0,0,0,0.6), rgba(0,0,0,0.3));
+  backdrop-filter: blur(6px);
+}
+
+.nav .brand { font-weight: 700; letter-spacing: 0.5px; }
+
+/* Mobile menu button */
+.mobile-menu {
+  display: none;
+  cursor: pointer;
+  font-size: 22px;
+  border: none;
+  background: transparent;
+  color: inherit;
+}
+
+/* Nav links layout */
+.nav-links {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+/* Cards and containers */
+.container, .section {
+  padding: 60px 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Hero adjustments */
+.hero-header {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 60px;
+}
+
+/* Reduce huge headings for modern look */
+.container h1 {
+  font-size: clamp(2rem, 6vw, 4.2rem);
+  line-height: 1.05;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.container h2, .container h3 {
+  color: #ddd;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform .18s ease, box-shadow .18s ease;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+}
+
+/* Responsive grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+/* Footer */
+.footer {
+  padding: 28px 20px;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #bbb;
+}
+
+/* Media queries */
+@media (max-width: 900px) {
+  .nav-links { gap: 12px; }
+  .container { padding: 36px 18px; }
+  .hero-header { min-height: 50vh; padding-top: 56px; }
+}
+
+@media (max-width: 700px) {
+  .mobile-menu { display: block; }
+  .nav-links { 
+    position: fixed;
+    top: 60px;
+    right: -320px;
+    width: 280px;
+    height: calc(100% - 60px);
+    background: linear-gradient(180deg,#0b0b0b,#111);
+    flex-direction: column;
+    padding: 18px;
+    gap: 14px;
+    transition: right .28s cubic-bezier(.2,.9,.3,1);
+    box-shadow: -12px 0 30px rgba(0,0,0,0.6);
+  }
+  body.menu-open .nav-links { right: 0; }
+  .nav-links a { padding: 10px 12px; border-radius: 6px; }
+  .container h1 { font-size: clamp(1.6rem, 7vw, 3rem); }
+}
+
+@media (max-width: 420px) {
+  .container { padding: 24px 14px; }
+  .btn { padding: 9px 14px; font-size: 0.95rem; }
+}

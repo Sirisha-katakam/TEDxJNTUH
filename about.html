@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TEDxJNTU Hyderabad</title>
+  <link rel="icon" href="assets/img/favicon.png" type="image/png" />
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100%;
+      height: auto;
+      font-family: 'Raleway', sans-serif;
+      scroll-behavior: smooth;
+      background: #000000; /* Solid black background throughout */
+      max-width: 100vw;
+      overflow-x: hidden;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(0, 0, 0, 1) 30%,
+        rgba(0, 0, 0, 0.7) 50%,
+        rgba(0, 0, 0, 0.3) 80%,
+        rgba(0, 0, 0, 0) 100%
+      );
+      z-index: 1000;
+    }
+    
+    .nav-container {
+      max-width: 100%;
+      margin: 0 auto;
+      padding: 20px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      height: 500px;
+      flex-shrink: 0;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    .nav-links a {
+  color: white;
+  text-decoration: none;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 15;
+  font-size: 15px;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a:focus,
+.nav-links a:active {
+  color: #eb0028;
+  font-size: 15px;
+  transform: scale(1);
+}
+
+
+    h2 {
+      font-size: 60px;
+      color: #eb0028;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 800;
+      text-align: center;
+    }
+
+    h3 {
+      font-size: 20px;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 100;
+      color: #e0e0e0;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .disclaimer {
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      text-align: center;
+      color: #ccc;
+      font-size: 14px;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    @media (max-width: 600px) {
+      .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .logo {
+        height: 32px;
+      }
+
+      .nav-links a {
+        font-size: 14px;
+      }
+    }
+
+    .about-section {
+      position: relative;
+      z-index: 2;
+      margin: 50px auto 0px;
+      max-width: 85%;
+    }
+
+    .about-section h1 {
+      font-size: 36px;
+      color: #ffff;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .about-section h2 {
+      font-size: 36px;
+      color: #eb0028;
+      text-align: center;
+      font-weight: 500px;
+      margin-bottom: 20px;
+    }
+
+    .about-section h3{
+      font-size: 36px;
+      color: #ffff;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .about-heading {
+      display: flex;
+      justify-content: center;
+      align-items: baseline;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+      margin-top: 50px;
+    }
+
+    .about-heading h1,
+    .about-heading h2,
+    .about-heading h3 {
+        margin: 0;
+        padding: 0;
+        font-size: 36px;
+        white-space: nowrap;
+        text-align: center;
+        font-weight: bold;
+        text-transform: none; /* ensures it's not forced uppercase */
+        align-items: center;
+      }
+    
+      .about-heading h2 {
+        color: #eb0028;
+        font-weight: bolder;
+    }
+
+
+    .about-section p {
+      font-size: 16px;
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    .disclaimer {
+      text-align: center;
+      color: #ccc;
+      font-size: 14px;
+      margin-bottom: 20px;
+      z-index: 2;
+      position: relative;
+    }
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px;
+  }
+
+  .logo {
+    height: 32px;
+    flex-shrink: 0;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    text-align: center;
+    padding: 8px 20px;
+    animation: slideDown 0.4s ease forwards;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: block;
+    width: 32px;
+    height: auto;
+    cursor: pointer;
+  }
+}
+nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background-color: transparent;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 25px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.logo {
+  height: 62px;
+}
+
+.menu-icon {
+  display: none;
+  width: 35px;
+  height: auto;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-links a:visited,
+.nav-links a:focus,
+.nav-links a:active {
+  color: white;
+  font-weight: 500;
+  outline: none;
+}
+.nav-links a:hover {
+  color: #eb0028;
+}
+
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.95);
+    text-align: center;
+    padding: 20px 0;
+    animation: slideDown 0.3s ease forwards;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+/* Thin scrollbar styling - Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 1px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ffff;
+  border-radius: 1px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #ffff;
+}
+
+/* Thin scrollbar styling - Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ffff;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #ffff;
+}
+
+/* Chrome, Safari, Edge */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #ffff;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #ffff;
+}
+
+.site-footer {
+  background-color: #0b0b0b;
+  color: #fff;
+  padding: 10px 10px 10px;
+  font-family: 'Raleway', sans-serif;
+  border-top: 1px solid #ccc;
+}
+
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  max-width: 100%;
+  margin: 0 0 0px;
+  gap: 0px;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  gap:0px;
+}
+
+.footer-logo {
+  height: 50px;
+}
+
+.footer-delta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+.delta-text {
+  font-size: 90px;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+
+.footer-contact,
+.footer-social {
+  min-width: 100px;
+}
+
+.footer-links h3,
+.footer-contact h3,
+.footer-social h3 {
+  color: #eb0028;
+  margin-bottom: 10px;
+  margin-top: 50px;
+  font-size: 18.72px;
+  font-weight: bold;
+  text-align: left;
+}
+
+
+.footer-contact a,
+.footer-social a {
+  color: #fff;
+  text-decoration: none;
+  font-family: sans-serif;
+  display: block;
+  margin-bottom: 8px;
+  transition: color 0.3s ease;
+}
+
+.footer-contact a:hover,
+.footer-social a:hover {
+  color: #eb0028;
+}
+
+.footer-credit {
+  text-align: center;
+  font-size: 14px;
+  color: #aaa;
+  font-family: sans-serif;
+  margin-top: 20px;
+  min-width: 100%;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+    padding: 20px;
+  }
+
+  .footer-left {
+    align-items: center;
+    margin-left: -25px;
+  }
+
+  .footer-logo {
+    height: 40px;
+    align-items: center;
+  }
+
+  .footer-delta {
+    flex-direction: column;
+    align-items: left;
+    position: relative;
+    display: flex;
+    justify-content: left;
+  }
+
+  .delta-logo-wrapper {
+    position: relative;
+    display: inline-block;
+    margin-left: -75px;
+  }
+
+  .delta-icon {
+    height: 120px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .delta-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: white;
+    letter-spacing: 6px;
+    white-space: nowrap;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .footer-info {
+    flex-direction: column;
+    align-items: left;
+    gap: 30px;
+  }
+
+  .footer-contact,
+  .footer-social,
+  .footer-links {
+    min-width: unset;
+    width: 100%;
+    text-align: left;
+  }
+
+  .links-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    justify-items: left;
+  }
+
+  .footer-links a {
+    text-align: left;
+  }
+
+  .footer-credit {
+    margin-left: 0;
+    padding-top: 20px;
+    text-align: center;
+  }
+}
+
+
+.footer-delta {
+  position: relative;
+}
+
+.delta-logo-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.delta-icon {
+  height: 170px; /* Adjust size as needed */
+  margin-left: 85px;
+  margin-top: 5px;
+}
+
+.delta-text {
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  margin-left: 83px;
+  margin-right: -200px;
+  transform: translate(-22.5%, -50%);
+  font-size: 60px;
+  font-weight: bold;
+  color: white;
+  letter-spacing: 6px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.footer-socials {
+  background-color: #000; /* black background */
+  padding: 1.5rem;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.footer-social{
+  margin-right: 50px;
+}
+
+.footer-socials h3 {
+  color: #e60023; /* red color */
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.footer-socials ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-social li {
+  margin-bottom: 1rem;
+}
+
+.footer-social a {
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: opacity 0.3s;
+  font-family: 'Raleway', sans-serif;
+}
+
+.footer-social a:hover {
+  opacity: 1;
+}
+
+.footer-social img {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+.about-section {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: #000;
+  color: white;
+}
+.footer-links {
+  min-width: 200px;
+}
+
+.footer-links h3 {
+  color: #eb0028;
+  margin-bottom: 10px;
+  margin-top: 50px;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 8px;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #eb0028;
+}
+
+.links-grid {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 8px 20px;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #eb0028;
+}
+
+.close-btn-img {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1002;
+}
+
+.menu-icon-img {
+  width: 32px;
+  height: auto;
+  cursor: pointer;
+  z-index: 1002;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 1;
+}
+.menu-icon-img.fade-out {
+  opacity: 0;
+}
+.menu-toggle-icons {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  z-index: 1002;
+}
+
+.menu-icon-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.menu-icon-img.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.menu-icon-img.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+@media (max-width: 768px) {
+  .theme-left {
+    margin-right: 0 !important;
+  }
+
+  .theme-right {
+    margin-left: 0 !important;
+  }
+}
+/* Hide X and menu icons by default */
+.menu-toggle-icons {
+  display: none;
+}
+
+/* Show X and menu icon ONLY on mobile */
+@media (max-width: 768px) {
+  .menu-toggle-icons {
+    display: block;
+  }
+}
+@media (max-width: 768px) {
+  nav.nav-solid {
+    background-color: #000 !important; /* Solid black override */
+  }
+
+  .nav-links {
+    background-color: transparent;
+  }
+
+  .nav-links.show {
+  display: flex;
+  background-color: #000;
+  margin-top: 0;
+  padding: 15px 0;
+  width: 100%;
+  animation: slideUpFade 0.4s ease forwards;
+  border-radius: 0;
+}
+
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+.nav-links {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 70px;
+  right: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.95);
+  text-align: center;
+  padding: 20px 0;
+  animation: none;
+}
+
+.nav-links.showing {
+  display: flex;
+  animation: slideDown 0.3s ease forwards;
+}
+
+.nav-links.hiding {
+  display: flex;
+  animation: slideUp 0.3s ease forwards;
+}
+
+
+  .nav-links.show a {
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  .nav-links.show a:hover {
+    background-color: #444;
+  }
+}
+.about-section a {
+  color: white;
+  text-decoration: underline;
+}
+
+.about-section a:hover {
+  color: white;
+}
+.footer-logo {
+  height: auto;
+  width: auto;
+  max-height: 99px;
+  object-fit: contain;
+  margin-left: 19px;
+  margin-top: 10px;
+}
+.nav-links a.desktop-only {
+  background-color: #eb0028;
+  color: rgb(255, 255, 255);
+  font-family: 'Raleway', sans-serif;
+  white-space: nowrap;
+  line-height: 1;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 10px 20px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  pointer-events: auto;
+  box-sizing: border-box;
+}
+
+/* Hover effect */
+.nav-links a.desktop-only:hover {
+  background-color: #b01212;
+}
+
+/* Hide on mobile */
+@media (max-width: 768px) {
+  .nav-links a.desktop-only {
+    display: none !important;
+  }
+}
+/* Dropdown container */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown button */
+.dropbtn {
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+  padding: 10px 0px;
+  display: block;
+  font-family: 'Raleway', sans-serif;
+}
+
+/* Dropdown content */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #111;
+  min-width: 100px;
+  z-index: 9999;
+  top: 100%;
+  left: -15.5px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.6);
+}
+
+/* Links inside dropdown */
+.dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  display: block;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.dropdown-content a:hover {
+  background-color: #eb0028;
+  color: white;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: white;
+  transition: color 0.4s ease-in-out;
+  position: relative;
+}
+
+.social-link:hover {
+  color: #eb0028;
+  transition: color 0.3s ease-in-out 0.035s; /* delay matches image fade start */
+}
+
+/* Icon container */
+.icon-wrapper {
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+
+/* Common icon styling */
+.icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  transition: opacity 0.4s ease-in-out;
+}
+
+/* Show white icon first */
+.white-icon {
+  opacity: 1;
+  z-index: 1;
+}
+
+/* Red icon hidden initially */
+.red-icon {
+  opacity: 0;
+  z-index: 2;
+}
+
+/* On hover: fade white out, red in */
+.social-link:hover .white-icon {
+  opacity: 0;
+}
+
+.social-link:hover .red-icon {
+  opacity: 1;
+}
+
+.logo-inline {
+  height: 0.8em;
+  vertical-align: middle;
+  margin-left: 5px;
+  margin-bottom: 5.5px;
+}
+.logo-in {
+  height: 1.15em;
+  vertical-align: middle;
+  margin-left: px;
+  margin-bottom: 5.5px;
+}
+  </style>
+    <link rel="stylesheet" href="assets/css/responsive.css">\n</head>
+<body>
+  <header class="hero-header">
+  <nav>\n    <button class="mobile-menu" aria-label="Open menu">☰</button>
+    <div class="nav-container">
+      <a href="index.html" class="logo-wrapper">
+        <img src="assets/img/tedx-logo.png" alt="TEDxJNTU Hyderabad Logo" class="logo" />
+      </a>
+      <div class="menu-toggle-icons" onclick="toggleMenu()">
+        <img src="assets/img/menu.png" id="menuIcon" class="menu-icon-img show" alt="Menu">
+        <img src="assets/img/x.png" id="closeIcon" class="menu-icon-img hide" alt="Close">
+      </div>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">HOME</a>
+        <div class="dropdown">
+          <a href="#" class="dropbtn">ABOUT</a>
+          <div class="dropdown-content">
+            <a href="about.html">About Us</a>
+              <a href="team.html">Our Team</a>
+              <a href="admin.html">Our Administration</a>
+              <a href="https://www.ted.com/tedx/events/65306" target="_blank">Official TEDx Website</a>
+              <a href="https://jntuh.ac.in/" target="_blank">JNTU Hyderabad</a>
+              <a href="https://jntuhceh.ac.in/" target="_blank">JNTUH UCESTH</a>
+          </div>
+        </div>
+        <a href="speakers.html">SPEAKERS</a>
+        <a href="sponsors.html">SPONSORS</a>
+        <a href="#contact">CONTACT US</a>
+        <a href="https://forms.gle/YOUR_FORM_LINK" class="desktop-only">Book Your Tickets</a>
+      </div>
+    </div>
+  </nav>
+  
+    <div class="hero-text">
+    </div>
+  </header>
+
+  <div class="about-section" data-aos="fade-up" data-aos-duration="1000">
+    <div class="about-heading" style="margin-top: 60px;">
+      <h1>About <img src="assets/img/ted.png" alt="TED Logo" class="logo-inline"></h1>
+    </div>
+    <p style="text-align:justify;">
+      TED is a nonprofit, nonpartisan organization dedicated to discovering, debating and spreading ideas that spark conversation, deepen understanding and drive meaningful change. Our organization is devoted to curiosity, reason, wonder and the pursuit of knowledge — without an agenda. We welcome people from every discipline and culture who seek a deeper understanding of the world and connection with others, and we invite everyone to engage with ideas and activate them in your community.
+    </p>
+    <p style="text-align:justify;">
+      TED began in 1984 as a conference where Technology, Entertainment and Design converged, but today it spans a multitude of worldwide communities and initiatives exploring everything from science and business to education, arts and global issues. In addition to the TED Talks curated from our annual conferences and published on <a href="https://www.ted.com/" target="_blank">TED.com</a>, we produce <a href="https://audiocollective.ted.com" target="_blank">original podcasts</a>, <a href="https://www.ted.com/series" target="_blank">short video series</a>, <a href="https://ed.ted.com/" target="_blank">animated educational lessons (TED-Ed)</a>, and TV programs translated into more than 100 languages. Thousands of independently run <a href="https://www.ted.com/about/programs-initiatives/tedx-program" target="_blank">TEDx events</a> take place yearly, bridging communities globally. Through the <a href="https://www.audaciousproject.org/" target="_blank">Audacious Project</a>, TED has catalyzed over $3 billion in funding for meaningful change. Recent initiatives include <a href="https://countdown.ted.com/" target="_blank">Countdown</a> (climate action) and <a href="https://www.ted.com/about/programs-initiatives/teddemocracy" target="_blank">TED Democracy</a> (vibrant futures).
+    </p>
+    <p style="text-align:justify;">
+      Explore <a href="https://www.ted.com/about/programs-initiatives" target="_blank">all TED programs</a> and follow TED on <a href="http://www.facebook.com/TED" target="_blank">Facebook</a>, <a href="https://instagram.com/ted" target="_blank">Instagram</a>, <a href="https://www.linkedin.com/company/ted-conferences" target="_blank">LinkedIn</a>, <a href="https://www.tiktok.com/@tedtoks?lang=en" target="_blank">TikTok</a>, and <a href="http://twitter.com/TEDTalks" target="_blank">X</a>.
+    </p>
+    <div class="about-heading">
+      <h1>About <img src="assets/img/tedx.png" alt="TEDx Logo" class="logo-inline"></h1>
+    </div>
+    <p style="text-align:justify;">
+      In the spirit of discovering and spreading ideas, TEDx is a program of local, self-organized events that bring people together to share a TED-like experience. At a TEDx event, TED Talks video and live speakers combine to spark deep discussion and connection. These local, self-organized events are branded TEDx, where x = independently organized TED event. The TED Conference provides general guidance for the TEDx program, but individual TEDx events are self-organized. (Subject to certain rules and regulations.)
+    </p>
+    <div class="about-heading" style="margin-top: 60px;">
+      <h1>About <img src="assets/img/tedx.png" alt="TED Logo" class="logo-inline"><img src="assets/img/jntuhyderabad.png" alt="jntuhyderabad" class="logo-in"></h1>
+    </div>
+    <p style="text-align:justify;">
+      TEDxJNTU Hyderabad is a student-led initiative at Jawaharlal Nehru Technological University, Hyderabad, that aims to bring together innovative thinkers, inspiring speakers, and passionate individuals to share ideas worth spreading. Our mission is to create a platform for students and the community to engage with thought leaders, explore diverse perspectives, and foster a culture of curiosity and learning.
+      <br><br>
+      As an officially licensed TEDx event, we are committed to upholding the values of TED and providing a stage for voices that inspire, challenge, and empower. Our team of dedicated students works tirelessly to curate a memorable experience, featuring talks, performances, and interactive sessions that spark meaningful conversations and connections.
+      <br><br>
+      TEDxJNTU Hyderabad is not just an event—it's a movement to ignite curiosity and drive positive change within our university and beyond. We invite you to join us in celebrating the power of ideas and becoming part of a vibrant community that believes in making a difference.
+    </p>
+  </div>
+  <!-- Initialize AOS -->
+  <script>
+    AOS.init({
+    duration: 400,
+    easing: 'ease-out',
+    once: true, // animation runs once on scroll into view
+  });
+  </script>
+  <script>
+    function toggleMenu() {
+      const nav = document.querySelector("nav");
+      const navLinks = document.getElementById("navLinks");
+  
+      const menuIcon = document.getElementById("menuIcon");
+      const closeIcon = document.getElementById("closeIcon");
+  
+      if (window.innerWidth <= 768) {
+        if (navLinks.classList.contains("showing")) {
+          navLinks.classList.remove("showing");
+          navLinks.classList.add("hiding");
+  
+          // Swap icons
+          menuIcon.classList.add("show");
+          menuIcon.classList.remove("hide");
+          closeIcon.classList.add("hide");
+          closeIcon.classList.remove("show");
+  
+          setTimeout(() => {
+            navLinks.classList.remove("hiding");
+            navLinks.style.display = "none";
+          }, 300);
+  
+          nav.classList.remove("nav-solid");
+        } else {
+          navLinks.style.display = "flex";
+          navLinks.classList.remove("hiding");
+          navLinks.classList.add("showing");
+  
+          // Swap icons
+          menuIcon.classList.add("hide");
+          menuIcon.classList.remove("show");
+          closeIcon.classList.add("show");
+          closeIcon.classList.remove("hide");
+  
+          nav.classList.add("nav-solid");
+        }
+      }
+    }
+  </script>
+  <script>
+    // Close mobile menu when any nav link is clicked (including #contact)
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        const navLinks = document.getElementById('navLinks');
+        if (navLinks.classList.contains('show')) {
+          navLinks.classList.remove('show');
+        }
+      });
+    });
+  </script>
+  
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+  <footer class="site-footer" id="contact">
+    <div class="footer-container">
+      <!-- LEFT SIDE: Logos -->
+      <div class="footer-left">
+        <img src="assets/img/tedx-logo.png" alt="TEDx Logo" class="footer-logo" />
+        <div class="footer-delta">
+          <div class="delta-logo-wrapper">
+            <img src="assets/img/your-image.png" alt="Delta Logo" class="delta-icon" />
+            <span class="delta-text">ＤＥＬＴＡ</span>
+          </div>
+        </div>        
+      </div>
+  
+      <!-- Resources Section -->
+      <div class="footer-links">
+        <h3>Resources & Links</h3>
+        <div class="links-grid">
+          <a href="https://www.ted.com/" target="_blank">TED</a>
+          <a href="https://www.ted.com/about/programs-initiatives/tedx-program" target="_blank">TEDx</a>
+          <a href="https://ed.ted.com/" target="_blank">TED Ed</a>
+          <a href="https://www.ted.com/about/programs-initiatives/ted-institute" target="_blank">TED Institute</a>
+          <a href="https://courses.ted.com/" target="_blank">TED Courses</a>
+          <a href="https://www.ted.com/speakers" target="_blank">TED Speakers</a>
+          <a href="https://www.ted.com/participate/organize-a-local-tedx-event/tedx-organizer-guide" target="_blank">TEDx Organisers</a>
+          <a href="https://community.ted.com/landing?from=https%3A%2F%2Fcommunity.ted.com%2F" target="_blank">TED Community</a>
+        </div>
+      </div>
+  
+      <!-- RIGHT SIDE: Contact + Social side by side -->
+      
+        <!-- Contact Info -->
+        <div class="footer-contact">
+          <h3>Contact Us</h3>
+          <p>Email: <a href="mailto:tedxjntuhyderabad@gmail.com">tedxjntuhyderabad@gmail.com</a></p>
+          <p>Phone: <a href="tel:+918985285610">+91 89852 85610</a></p>
+        </div>
+  
+        <!-- Social Media -->
+        <div class="footer-social">
+          <h3>Follow Us</h3>
+          <a href="https://www.instagram.com/tedxjntuhyderabad/" class="social-link" target="_blank">
+            <div class="icon-wrapper">
+              <img src="assets/img/instagram-white.png" class="icon white-icon" alt="Instagram White">
+              <img src="assets/img/instagram-red.png" class="icon red-icon" alt="Instagram Red">
+            </div>
+            <span>Instagram</span>
+          </a>
+          <a href="https://www.linkedin.com/company/tedxjntu-hyderabad/" class="social-link" target="_blank">
+            <div class="icon-wrapper">
+              <img src="assets/img/linkedin-white.png" class="icon white-icon" alt="Linkedin White">
+              <img src="assets/img/linkedin-red.png" class="icon red-icon" alt="Linkedin Red">
+            </div>
+            <span>LinkedIn</span>
+          </a>
+          <a href="https://www.youtube.com/@TEDxJNTUHyderabad" class="social-link" target="_blank">
+            <div class="icon-wrapper">
+              <img src="assets/img/youtube-white.png" class="icon white-icon" alt="Youtube White">
+              <img src="assets/img/youtube-red.png" class="icon red-icon" alt="Youtube Red">
+            </div>
+            <span>Youtube</span>
+          </a>
+          <a href="https://x.com/tedxjntuhyd" class="social-link" target="_blank">
+            <div class="icon-wrapper">
+              <img src="assets/img/twitter-white.png" class="icon white-icon" alt="Twitter White">
+              <img src="assets/img/twitter-red.png" class="icon red-icon" alt="Twitter Red">
+            </div>
+            <span>Twitter</span>
+          </a>
+        </div>
+      </div>      
+  
+      <p class="footer-credit">
+        © Copyright 2025 TEDxJNTU Hyderabad. This is an independent event under license from TED.
+        Learn more <a href="https://www.ted.com/participate/organize-a-local-tedx-event/before-you-start/what-is-a-tedx-event" target="_blank" style="color: #eb0028; text-decoration: underline;">here</a>.
+      </p>
+  </footer>  
+    <script src="assets/js/responsive.js"></script>\n</body>
+</html>
